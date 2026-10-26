@@ -1,0 +1,98 @@
+[
+  {
+    "id": "luma-evt-kaHm7Mf93PcOHVh",
+    "title": "Discover What's Nearby: Android Network Service Discovery",
+    "kind": "Technical Session",
+    "startsAt": "2026-10-30T16:00:00.000Z",
+    "durationMinutes": 60,
+    "speakers": [],
+    "hostedBy": [
+      "Prashant Panwar",
+      "Selen Demir",
+      "Romit Sharma"
+    ],
+    "description": "",
+    "topics": [
+      "Android"
+    ],
+    "registrationUrl": "https://luma.com/4tk35zui"
+  },
+  {
+    "id": "luma-evt-sM5lF9YMxQ1J1z3",
+    "title": "Builders Connect",
+    "kind": "Community Event",
+    "startsAt": "2026-11-13T16:00:00.000Z",
+    "durationMinutes": 90,
+    "speakers": [],
+    "hostedBy": [
+      "Prashant Panwar"
+    ],
+    "description": "",
+    "topics": [],
+    "registrationUrl": "https://luma.com/yb17nxoy"
+  },
+  {
+    "id": "luma-evt-VoxAyMx9d6jjAnI",
+    "title": "Personalized AI on Android: Train It, Tune It, Ship It",
+    "kind": "Technical Session",
+    "startsAt": "2026-11-20T14:00:00.000Z",
+    "durationMinutes": 60,
+    "speakers": [],
+    "hostedBy": [
+      "Prashant Panwar",
+      "Selen Demir"
+    ],
+    "description": "",
+    "topics": [
+      "Android",
+      "AI-assisted engineering"
+    ],
+    "registrationUrl": "https://luma.com/ppwizypk"
+  },
+  {
+    "id": "luma-evt-r0LKAO4Jjo2v6ng",
+    "title": "Building API Integrations in Jetpack Compose",
+    "kind": "Technical Session",
+    "startsAt": "2026-11-27T16:00:00.000Z",
+    "durationMinutes": 60,
+    "speakers": [],
+    "hostedBy": [
+      "Prashant Panwar"
+    ],
+    "description": "",
+    "topics": [
+      "Jetpack Compose"
+    ],
+    "registrationUrl": "https://luma.com/llq5dhdj"
+  },
+  {
+    "id": "luma-evt-riFjwipwhaKftsR",
+    "title": "Modularization with CLEAN architecture in mobile engineer",
+    "kind": "Technical Session",
+    "startsAt": "2026-12-04T16:00:00.000Z",
+    "durationMinutes": 60,
+    "speakers": [],
+    "hostedBy": [
+      "Prashant Panwar"
+    ],
+    "description": "",
+    "topics": [
+      "Architecture"
+    ],
+    "registrationUrl": "https://luma.com/403z5oa2"
+  },
+  {
+    "id": "luma-evt-i1bRgDjqWUVyVkU",
+    "title": "Builders Connect",
+    "kind": "Community Event",
+    "startsAt": "2026-12-18T16:00:00.000Z",
+    "durationMinutes": 90,
+    "speakers": [],
+    "hostedBy": [
+      "Prashant Panwar"
+    ],
+    "description": "",
+    "topics": [],
+    "registrationUrl": "https://luma.com/d4us9a5d"
+  }
+]

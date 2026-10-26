@@ -1,0 +1,207 @@
+.kind {
+  color: var(--c-muted);
+}
+
+.title,
+.pastTitle {
+  letter-spacing: -0.035em;
+}
+
+.speakers {
+  margin-top: var(--s-2);
+  font-weight: 700;
+}
+
+.hosts {
+  margin-top: var(--s-2);
+  color: var(--c-muted);
+  font-weight: 600;
+}
+
+.description {
+  margin-top: var(--s-3);
+  color: var(--c-muted);
+}
+
+.topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: var(--s-4);
+}
+.topics li {
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--r-pill);
+  border: 1px solid color-mix(in srgb, var(--c-ink) 18%, transparent);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.pending {
+  color: var(--c-muted);
+}
+
+/* ── Upcoming ─────────────────────────── */
+.upcoming {
+  position: relative;
+  display: grid;
+  gap: var(--s-5);
+  padding: var(--s-6);
+  border: var(--hairline);
+  border-radius: var(--r-lg);
+  background: var(--c-surface);
+}
+
+.sample {
+  border: 1.5px dashed var(--c-border-strong);
+  background: repeating-linear-gradient(-45deg, var(--c-surface) 0 14px, #fbfaf2 14px 28px);
+}
+.sampleStamp {
+  position: absolute;
+  top: -0.75rem;
+  left: var(--s-6);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--r-pill);
+  background: var(--c-peach);
+  color: var(--c-ink);
+}
+
+.date time {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: var(--s-3);
+  align-items: end;
+}
+.day {
+  grid-row: span 2;
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+}
+.month {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.time {
+  color: var(--c-muted);
+  line-height: 1.5;
+}
+
+.content .title {
+  margin-top: var(--s-2);
+  font-size: var(--fs-h3);
+}
+
+@media (min-width: 860px) {
+  .upcoming {
+    grid-template-columns: 9rem minmax(0, 1fr) auto;
+    align-items: start;
+    gap: var(--s-6);
+  }
+  .date time {
+    grid-template-columns: 1fr;
+    row-gap: var(--s-2);
+  }
+  .day {
+    grid-row: auto;
+    font-size: 4.5rem;
+  }
+  .action {
+    align-self: center;
+  }
+}
+
+/* ── Past ─────────────────────────────── */
+.past {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--s-6);
+  border: 1px solid transparent;
+  border-radius: var(--r-lg);
+  transition:
+    transform var(--t-med) var(--ease-out),
+    border-color var(--t-med) ease;
+}
+.lavender {
+  background: var(--c-lavender);
+}
+.sage {
+  background: var(--c-sage);
+}
+.peach {
+  background: var(--c-peach);
+}
+.lime {
+  background: var(--c-lime-soft);
+}
+.past:hover {
+  border-color: var(--c-ink);
+}
+.clickable:hover {
+  transform: translateY(-4px);
+}
+
+.pastTop {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s-3);
+  padding-bottom: var(--s-4);
+  border-bottom: 1px solid color-mix(in srgb, var(--c-ink) 14%, transparent);
+}
+.pastTop .kind {
+  color: var(--c-ink-soft);
+}
+
+.pastTitle {
+  margin-top: var(--s-5);
+  font-size: clamp(1.35rem, 1.15rem + 0.8vw, 1.75rem);
+}
+
+.past .description {
+  color: var(--c-ink-soft);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-4);
+  margin-top: auto;
+  padding-top: var(--s-5);
+}
+.past .pending {
+  color: var(--c-ink-soft);
+  opacity: 0.8;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+.linkArrow {
+  transition: translate var(--t-med) var(--ease-out);
+}
+.past:hover .linkArrow,
+.link:hover .linkArrow {
+  translate: 2px -2px;
+}
+
+/* The recording link covers the card, so the whole card is the click target. */
+.stretched::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--r-lg);
+}
+.links .link:not(.stretched) {
+  position: relative;
+  z-index: 1;
+}

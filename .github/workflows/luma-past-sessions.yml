@@ -1,0 +1,42 @@
+# Adds technical sessions that have happened on the Mobile Builders Luma calendar to the
+# website's past sessions (src/data/luma/past.json). New ones arrive with no
+# recording link, so their card reads "Recording not yet published" until the YouTube link
+# is added to past.json by hand. Existing entries are never rewritten.
+name: Luma · past sessions
+
+on:
+  schedule:
+    - cron: "30 12 * * 0" # Sundays 12:30 UTC = 18:00 IST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: luma-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Sync past sessions from Luma
+        run: node scripts/syncLuma.ts past
+
+      - name: Commit new sessions
+        run: |
+          if git diff --quiet -- src/data/luma; then
+            echo "No new past sessions."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/luma
+          git commit -m "Mobile Builders: add past sessions from Luma"
+          git push

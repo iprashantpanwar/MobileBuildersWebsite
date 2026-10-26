@@ -1,0 +1,26 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.mark {
+  width: auto;
+  height: 28px;
+  aspect-ratio: 326 / 196;
+}
+
+.wordmark {
+  font-weight: 800;
+  font-size: 0.8125rem;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--c-ink);
+}
+
+.lg .mark {
+  height: 40px;
+}
+.lg .wordmark {
+  font-size: 1rem;
+}

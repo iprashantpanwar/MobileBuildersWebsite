@@ -1,0 +1,41 @@
+# Refreshes the website's upcoming events (src/data/luma/upcoming.json) from
+# the Mobile Builders Luma calendar. The file is replaced on every run, so edit events on Luma,
+# not in the file.
+name: Luma · upcoming events
+
+on:
+  schedule:
+    - cron: "30 12 * * 3" # Wednesdays 12:30 UTC = 18:00 IST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: luma-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Sync upcoming events from Luma
+        run: node scripts/syncLuma.ts upcoming
+
+      - name: Commit changes
+        run: |
+          if git diff --quiet -- src/data/luma; then
+            echo "Upcoming events unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/luma
+          git commit -m "Mobile Builders: refresh upcoming events from Luma"
+          git push

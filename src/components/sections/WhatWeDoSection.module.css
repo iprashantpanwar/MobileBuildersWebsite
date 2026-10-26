@@ -1,0 +1,125 @@
+.grid {
+  display: grid;
+  gap: var(--s-4);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: var(--hairline);
+  border-radius: var(--r-lg);
+  background: var(--c-surface);
+  transition:
+    border-color var(--t-med) ease,
+    transform var(--t-med) var(--ease-out);
+}
+.card:hover {
+  border-color: var(--c-ink);
+  transform: translateY(-4px);
+}
+
+.artWrap {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 8;
+  padding: var(--s-5) var(--s-6);
+  border-bottom: var(--hairline);
+}
+.learn .artWrap {
+  background: var(--c-lavender);
+}
+.connect .artWrap {
+  background: var(--c-sage);
+}
+.build .artWrap {
+  background: var(--c-peach);
+}
+
+.artWrap :global(.art) {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  overflow: visible;
+}
+.artWrap :global(.stroke) {
+  stroke: var(--c-ink);
+  stroke-width: 1.4;
+}
+.artWrap :global(.fill-surface) {
+  fill: var(--c-surface);
+}
+.artWrap :global(.fill-ink) {
+  fill: var(--c-ink);
+}
+.artWrap :global(.fill-lime) {
+  fill: var(--c-lime);
+}
+.artWrap :global(.fill-muted) {
+  fill: #4b5a53;
+}
+.artWrap :global(.lift) {
+  transition: transform var(--t-med) var(--ease-out);
+}
+.card:hover :global(.lift) {
+  transform: translateY(-6px);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: var(--s-6);
+}
+
+.n {
+  color: var(--c-muted);
+}
+
+.title {
+  margin-top: var(--s-3);
+  font-size: clamp(1.6rem, 1.3rem + 1vw, 2rem);
+  letter-spacing: -0.04em;
+}
+
+.body {
+  margin-top: var(--s-3);
+  color: var(--c-muted);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  margin-top: auto;
+  padding-top: var(--s-5);
+}
+.tags li {
+  padding: 0.25rem 0.6rem;
+  border: var(--hairline);
+  border-radius: var(--r-pill);
+  font-size: 0.6875rem;
+  color: var(--c-ink-soft);
+}
+
+@media (min-width: 720px) and (max-width: 1023px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .grid > :last-child {
+    grid-column: 1 / -1;
+    flex-direction: row;
+  }
+  .grid > :last-child .artWrap {
+    flex: 0 0 42%;
+    aspect-ratio: auto;
+    border-bottom: 0;
+    border-right: var(--hairline);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

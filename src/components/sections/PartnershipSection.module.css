@@ -1,0 +1,185 @@
+.section {
+  border-top: var(--hairline);
+}
+
+.layout {
+  display: grid;
+  gap: var(--s-7);
+}
+
+.ways {
+  display: grid;
+  gap: var(--s-4);
+}
+.ways li {
+  padding-left: var(--s-5);
+  border-left: 2px solid var(--c-lime);
+}
+.ways h3 {
+  font-size: var(--fs-lg);
+  letter-spacing: -0.02em;
+}
+.ways p {
+  margin-top: var(--s-1);
+  color: var(--c-muted);
+}
+
+.panel {
+  align-self: start;
+  padding: clamp(1.25rem, 0.75rem + 2.5vw, 2.5rem);
+  border: var(--hairline);
+  border-radius: var(--r-xl);
+  background: var(--c-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.panelLabel {
+  margin-bottom: var(--s-5);
+  padding-bottom: var(--s-4);
+  border-bottom: var(--hairline);
+  color: var(--c-muted);
+}
+
+/* ── Form ─────────────────────────────── */
+.form {
+  display: grid;
+  gap: var(--s-4);
+}
+
+.row2 {
+  display: grid;
+  gap: var(--s-4);
+}
+
+.field {
+  display: grid;
+  gap: 0.4rem;
+}
+.field label {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+}
+.optional {
+  font-weight: 500;
+  color: var(--c-muted);
+}
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--c-border-strong);
+  border-radius: var(--r-md);
+  background: var(--c-bg);
+  font-size: 1rem;
+  transition:
+    border-color var(--t-fast) ease,
+    background-color var(--t-fast) ease;
+}
+.field textarea {
+  resize: vertical;
+  min-height: 8rem;
+}
+.field select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5 6 6.5l5-5' stroke='%2314231F' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+.field input:hover,
+.field select:hover,
+.field textarea:hover {
+  border-color: var(--c-ink);
+}
+.field input:focus-visible,
+.field select:focus-visible,
+.field textarea:focus-visible {
+  border-color: var(--c-forest);
+  background: var(--c-surface);
+  border-radius: var(--r-md);
+}
+.field input:user-invalid,
+.field select:user-invalid,
+.field textarea:user-invalid {
+  border-color: #b4452c;
+}
+
+.submitRow {
+  display: grid;
+  gap: var(--s-3);
+  margin-top: var(--s-2);
+}
+
+.submit {
+  min-height: 52px;
+  padding: 0 1.5rem;
+  border: 0;
+  border-radius: var(--r-pill);
+  background: var(--c-ink);
+  color: var(--c-on-dark);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color var(--t-fast) ease;
+}
+.submit:hover {
+  background: var(--c-forest);
+}
+.submit:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.status {
+  font-size: var(--fs-sm);
+}
+.status:empty {
+  display: none;
+}
+.sent {
+  color: var(--c-forest);
+  font-weight: 700;
+}
+.error,
+.unconnected {
+  padding: 0.7rem 0.9rem;
+  border-radius: var(--r-md);
+  background: var(--c-peach);
+}
+
+/* ── Fallback (no form destination yet) ─ */
+.fallback {
+  display: grid;
+  gap: var(--s-5);
+  justify-items: start;
+}
+.typeList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.typeList li {
+  padding: 0.3rem 0.75rem;
+  border: var(--hairline);
+  border-radius: var(--r-pill);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+
+@media (min-width: 560px) {
+  .row2 {
+    grid-template-columns: 1fr 1fr;
+  }
+  .submitRow {
+    grid-template-columns: auto 1fr;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1000px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+    gap: var(--s-9);
+  }
+}

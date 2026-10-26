@@ -1,0 +1,134 @@
+.hero {
+  position: relative;
+  padding-block: clamp(2.5rem, 1rem + 5vw, 5.5rem) clamp(3rem, 2rem + 4vw, 6rem);
+}
+
+.layout {
+  display: grid;
+  gap: clamp(2.5rem, 1rem + 4vw, 4rem);
+  align-items: center;
+}
+
+.copy {
+  max-width: 40rem;
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0.85rem 0.4rem 0.7rem;
+  border: var(--hairline);
+  border-radius: var(--r-pill);
+  background: var(--c-surface);
+  color: var(--c-ink-soft);
+}
+
+.pulse {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #5fae3a;
+}
+.pulse::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid #5fae3a;
+  animation: ping 2.4s var(--ease-out) infinite;
+}
+@keyframes ping {
+  from {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.title {
+  isolation: isolate;
+  margin-top: var(--s-5);
+  font-size: var(--fs-display);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.highlight {
+  position: relative;
+  white-space: nowrap;
+  color: var(--c-forest);
+}
+.highlight::after {
+  content: "";
+  position: absolute;
+  left: -0.04em;
+  right: -0.04em;
+  bottom: 0.06em;
+  z-index: -1;
+  height: 0.3em;
+  border-radius: 4px;
+  background: var(--c-lime);
+  transform-origin: left;
+  animation: underline 900ms 300ms var(--ease-out) both;
+}
+@keyframes underline {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+.lede {
+  margin-top: var(--s-5);
+  max-width: 33rem;
+  font-size: var(--fs-xl);
+  line-height: 1.5;
+  color: var(--c-ink-soft);
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+  margin-top: var(--s-6);
+}
+
+.stacks {
+  display: grid;
+  gap: 0.35rem;
+  margin-top: var(--s-7);
+  padding-top: var(--s-4);
+  border-top: var(--hairline);
+  font-size: var(--fs-sm);
+  color: var(--c-muted);
+}
+.stackList {
+  font-weight: 600;
+  color: var(--c-ink-soft);
+}
+
+.visual {
+  width: 100%;
+  max-width: 560px;
+  justify-self: center;
+}
+
+@media (max-width: 559px) {
+  .ctas > a {
+    flex: 1 1 100%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .layout {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  }
+  .visual {
+    justify-self: end;
+  }
+}

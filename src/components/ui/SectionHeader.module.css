@@ -1,0 +1,53 @@
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--s-5) var(--s-7);
+  margin-bottom: clamp(2.5rem, 2rem + 2vw, 4rem);
+}
+
+.main {
+  max-width: 46rem;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: var(--s-5);
+  color: var(--c-muted);
+}
+.index {
+  color: var(--c-ink);
+}
+.rule {
+  width: 2.5rem;
+  height: 1px;
+  background: currentColor;
+}
+
+.title {
+  font-size: var(--fs-h2);
+  letter-spacing: -0.045em;
+}
+
+.intro {
+  margin-top: var(--s-5);
+  max-width: 36rem;
+  font-size: var(--fs-lg);
+  color: var(--c-muted);
+}
+
+.aside {
+  flex-shrink: 0;
+}
+
+.dark .label,
+.dark .intro {
+  color: var(--c-on-dark-muted);
+}
+.dark .index,
+.dark .title {
+  color: var(--c-on-dark);
+}

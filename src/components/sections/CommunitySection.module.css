@@ -1,0 +1,107 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  background: var(--c-ink);
+  color: var(--c-on-dark);
+}
+/* A faint modular grid, the same one behind the hero figure. */
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(245, 244, 237, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 244, 237, 0.05) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse at 80% 0%, #000 0%, transparent 70%);
+  pointer-events: none;
+}
+.section > :global(.container) {
+  position: relative;
+}
+
+.accent {
+  color: var(--c-lime);
+}
+
+.layout {
+  display: grid;
+  gap: var(--s-8);
+}
+
+.lead {
+  font-size: var(--fs-xl);
+  line-height: 1.5;
+  color: var(--c-on-dark);
+}
+
+.differences {
+  display: grid;
+  margin-top: var(--s-6);
+  border-top: 1px solid rgba(245, 244, 237, 0.14);
+}
+.differences li {
+  display: flex;
+  gap: var(--s-3);
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(245, 244, 237, 0.14);
+  color: var(--c-on-dark-muted);
+}
+.differences li::before {
+  content: "+";
+  font-family: var(--font-mono);
+  color: var(--c-lime);
+}
+
+.manifestoLabel {
+  margin-bottom: var(--s-4);
+  color: var(--c-on-dark-muted);
+}
+
+.principles {
+  display: grid;
+}
+.principles li {
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+  gap: var(--s-3);
+  padding: var(--s-5) 0;
+  border-top: 1px solid rgba(245, 244, 237, 0.14);
+}
+.principles li:last-child {
+  border-bottom: 1px solid rgba(245, 244, 237, 0.14);
+}
+
+.num {
+  padding-top: 0.6rem;
+  color: var(--c-lime);
+}
+
+.principle {
+  font-size: clamp(1.75rem, 1.3rem + 2vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+  transition: color var(--t-med) ease;
+}
+.principles li:hover .principle {
+  color: var(--c-lime);
+}
+
+.principleBody {
+  margin-top: var(--s-2);
+  max-width: 30rem;
+  color: var(--c-on-dark-muted);
+}
+
+@media (min-width: 960px) {
+  .layout {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: var(--s-9);
+  }
+  .side {
+    position: sticky;
+    top: calc(var(--header-h) + 2rem);
+    align-self: start;
+  }
+}

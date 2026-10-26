@@ -1,0 +1,365 @@
+/* All sizes inside are in container-query units, so the whole figure scales together. */
+.stage {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 1;
+  margin-inline: auto;
+  container-type: inline-size;
+}
+
+.lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.stage::before {
+  content: "";
+  position: absolute;
+  inset: -4%;
+  background-image:
+    linear-gradient(var(--c-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--c-border) 1px, transparent 1px);
+  background-size: calc(100% / 7.5) calc(100% / 7.5);
+  background-position: center;
+  mask-image: radial-gradient(closest-side, #000 55%, transparent);
+}
+
+.path {
+  fill: none;
+  stroke: var(--c-forest);
+  stroke-width: 1.25;
+  stroke-dasharray: 3 4;
+  vector-effect: non-scaling-stroke;
+  animation: flow 1.6s linear infinite;
+}
+
+@keyframes flow {
+  to {
+    stroke-dashoffset: -14;
+  }
+}
+
+.joint {
+  fill: var(--c-bg);
+  stroke: var(--c-forest);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+/* ── Device ─────────────────────────────── */
+.phone {
+  position: absolute;
+  padding: 1.6cqw;
+  border-radius: 7.5cqw;
+  background: var(--c-ink);
+  box-shadow:
+    0 2cqw 6cqw -2cqw rgba(20, 35, 31, 0.35),
+    inset 0 0 0 0.35cqw #2d3f39;
+  animation: float 9s ease-in-out infinite;
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(-1.2cqw);
+  }
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  gap: 3cqw;
+  height: 100%;
+  padding: 3cqw 3.2cqw;
+  border-radius: 6cqw;
+  background: var(--c-surface);
+  overflow: hidden;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 2cqw;
+  font-weight: 500;
+}
+.island {
+  width: 11cqw;
+  height: 3.2cqw;
+  border-radius: 2cqw;
+  background: var(--c-ink);
+}
+.signal {
+  width: 5cqw;
+  height: 2cqw;
+  border-radius: 0.6cqw;
+  border: 0.3cqw solid var(--c-ink);
+}
+
+.appHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1cqw;
+}
+.appTitle {
+  font-size: 4.2cqw;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+.avatars {
+  display: flex;
+}
+.avatars i {
+  width: 4.4cqw;
+  height: 4.4cqw;
+  margin-left: -1.4cqw;
+  border-radius: 50%;
+  border: 0.4cqw solid var(--c-surface);
+}
+
+.feature {
+  display: grid;
+  gap: 1.5cqw;
+  padding: 3cqw;
+  border-radius: 3.4cqw;
+  background: var(--c-forest);
+}
+.featureTag {
+  justify-self: start;
+  padding: 0.6cqw 1.6cqw;
+  border-radius: 2cqw;
+  background: var(--c-lime);
+  font-family: var(--font-mono);
+  font-size: 1.7cqw;
+  color: var(--c-ink);
+}
+.featureBar {
+  height: 1.6cqw;
+  border-radius: 1cqw;
+  background: rgba(245, 244, 237, 0.85);
+}
+.featureBar + .featureBar {
+  background: rgba(245, 244, 237, 0.4);
+}
+.progress {
+  height: 1.2cqw;
+  margin-top: 1cqw;
+  border-radius: 1cqw;
+  background: rgba(245, 244, 237, 0.18);
+}
+.progress span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--c-lime);
+}
+
+.rows {
+  display: grid;
+  gap: 1.6cqw;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.rows li {
+  display: flex;
+  align-items: center;
+  gap: 2cqw;
+  padding: 2cqw;
+  border: 1px solid var(--c-border);
+  border-radius: 2.8cqw;
+}
+.rowIcon {
+  flex-shrink: 0;
+  width: 6cqw;
+  height: 6cqw;
+  border-radius: 1.8cqw;
+}
+.rowText {
+  display: grid;
+  flex: 1;
+  gap: 1cqw;
+}
+.rowText span {
+  height: 1.3cqw;
+  border-radius: 1cqw;
+  background: var(--c-border-strong);
+}
+.rowText span + span {
+  background: var(--c-border);
+}
+.toggle {
+  position: relative;
+  flex-shrink: 0;
+  width: 6.4cqw;
+  height: 3.6cqw;
+  border-radius: 2cqw;
+  background: var(--c-border);
+}
+.toggle::after {
+  content: "";
+  position: absolute;
+  top: 0.5cqw;
+  left: 0.5cqw;
+  width: 2.6cqw;
+  height: 2.6cqw;
+  border-radius: 50%;
+  background: var(--c-surface);
+}
+.toggleOn {
+  background: var(--c-forest);
+}
+.toggleOn::after {
+  left: auto;
+  right: 0.5cqw;
+  background: var(--c-lime);
+}
+
+.tabbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: auto;
+  padding: 2cqw;
+  border-radius: 3cqw;
+  background: var(--c-bg);
+}
+.tabbar span {
+  width: 2.6cqw;
+  height: 2.6cqw;
+  border-radius: 50%;
+  background: var(--c-border-strong);
+}
+.tabbar .tabActive {
+  width: 9cqw;
+  border-radius: 2cqw;
+  background: var(--c-ink);
+}
+
+/* ── Floating cards ─────────────────────── */
+.card {
+  position: absolute;
+  display: grid;
+  gap: 1.6cqw;
+  padding: 2.6cqw 3cqw;
+  border: 1px solid var(--c-border);
+  border-radius: 3.6cqw;
+  background: var(--c-surface);
+  box-shadow: var(--shadow-card);
+}
+.cardLabel,
+.cardFoot {
+  font-family: var(--font-mono);
+  font-size: 1.85cqw;
+  letter-spacing: 0.02em;
+  color: var(--c-muted);
+}
+
+.code {
+  background: var(--c-ink);
+  border-color: var(--c-ink);
+}
+.code .cardLabel {
+  color: var(--c-on-dark-muted);
+}
+.code pre {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 2.35cqw;
+  line-height: 1.6;
+  color: var(--c-on-dark);
+  white-space: pre;
+}
+.kw {
+  color: var(--c-lime);
+}
+.type {
+  color: #c9c0f2;
+}
+
+.cells {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 0.7cqw;
+}
+.cells i {
+  aspect-ratio: 1;
+  border-radius: 0.6cqw;
+  background: var(--c-bg);
+  border: 1px solid var(--c-border);
+}
+.cells i[data-level="1"] {
+  background: var(--c-lime-soft);
+  border-color: transparent;
+}
+.cells i[data-level="2"] {
+  background: var(--c-lime);
+  border-color: transparent;
+}
+.cells i[data-level="3"] {
+  background: #6fae4f;
+  border-color: transparent;
+}
+.cells i[data-level="4"] {
+  background: var(--c-forest);
+  border-color: transparent;
+}
+
+/* ── Topic chips ────────────────────────── */
+.chip {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 1.2cqw;
+  padding: 1.1cqw 2.2cqw;
+  border: 1px solid var(--c-border-strong);
+  border-radius: 99px;
+  background: var(--c-surface);
+  font-size: 2.3cqw;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  transform: translateY(-50%);
+}
+.chip::before {
+  content: "";
+  width: 1.5cqw;
+  height: 1.5cqw;
+  border-radius: 50%;
+  background: var(--c-forest);
+}
+/* The dot is the connector end, so it faces the device. */
+.left {
+  flex-direction: row-reverse;
+  transform: translate(calc(-100% + 2.6cqw), -50%);
+}
+.right {
+  transform: translate(-2.6cqw, -50%);
+}
+.lime {
+  background: var(--c-lime);
+  border-color: color-mix(in srgb, var(--c-ink) 18%, var(--c-lime));
+}
+.lavender {
+  background: var(--c-lavender);
+}
+.peach {
+  background: var(--c-peach);
+}
+.sage {
+  background: var(--c-sage);
+}
+
+.caption {
+  position: absolute;
+  right: 0;
+  bottom: -1cqw;
+  font-family: var(--font-mono);
+  font-size: max(11px, 1.9cqw);
+  color: var(--c-muted);
+}

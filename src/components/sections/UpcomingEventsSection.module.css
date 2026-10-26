@@ -1,0 +1,125 @@
+.section {
+  border-top: var(--hairline);
+}
+
+.more {
+  margin-top: var(--s-5);
+}
+
+.list + .luma,
+.list + .stack {
+  margin-top: var(--s-5);
+}
+
+.list,
+.stack {
+  display: grid;
+  gap: var(--s-5);
+}
+
+.empty {
+  display: grid;
+  gap: var(--s-6);
+  padding: clamp(1.5rem, 1rem + 2.5vw, 3rem);
+  border-radius: var(--r-xl);
+  background: var(--c-forest);
+  color: var(--c-on-dark);
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  align-self: center;
+  width: 100%;
+  max-width: 220px;
+}
+@media (min-width: 860px) {
+  .calendar {
+    max-width: 280px;
+  }
+}
+.calendar span {
+  aspect-ratio: 1;
+  border-radius: 6px;
+  border: 1px solid rgba(245, 244, 237, 0.18);
+}
+.calendar .marked {
+  position: relative;
+  border-color: var(--c-lime);
+  background: var(--c-lime);
+}
+.calendar .marked::after {
+  content: "?";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: var(--c-ink);
+}
+
+.emptyLabel {
+  color: var(--c-lime);
+}
+
+.emptyTitle {
+  margin-top: var(--s-3);
+  font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.5rem);
+  letter-spacing: -0.04em;
+}
+
+.emptyBody {
+  margin-top: var(--s-4);
+  max-width: 34rem;
+  color: var(--c-on-dark-muted);
+}
+
+.emptyCtas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-5);
+  margin-top: var(--s-6);
+}
+.emptyCtas > a:last-child {
+  color: var(--c-on-dark);
+}
+
+@media (min-width: 860px) {
+  .empty {
+    grid-template-columns: 260px minmax(0, 1fr);
+    align-items: center;
+    gap: var(--s-8);
+  }
+}
+
+/* ── Luma calendar embed ──────────────── */
+.luma {
+  overflow: hidden;
+  border: var(--hairline);
+  border-radius: var(--r-xl);
+  background: var(--c-surface);
+}
+
+.lumaBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+  padding: var(--s-4) var(--s-5);
+  border-bottom: var(--hairline);
+  color: var(--c-muted);
+}
+.lumaBar a {
+  color: var(--c-ink);
+}
+
+.lumaFrame {
+  display: block;
+  width: 100%;
+  height: clamp(520px, 70vh, 720px);
+  border: 0;
+  background: #fff;
+}

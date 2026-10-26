@@ -1,4 +1,5 @@
 import { siteConfig } from "../../config/siteConfig";
+import { ButtonLink } from "../ui/Button";
 import { JoinLink } from "../ui/JoinLink";
 import { SectionHeader } from "../ui/SectionHeader";
 import { COLLABORATION_TYPES, PartnershipForm } from "./PartnershipForm";
@@ -11,8 +12,11 @@ const WAYS = [
 ];
 
 export function PartnershipSection() {
-  // The form shows once it can actually deliver a message (or in dev, to design against).
-  const formReady = Boolean(siteConfig.partnershipFormEndpoint || siteConfig.contactEmail || import.meta.env.DEV);
+  const hostedForm = siteConfig.collaborationFormUrl;
+  // With a hosted form, "Get in touch" opens it. Otherwise the built-in form shows once it can
+  // actually deliver a message (or in dev, to design against).
+  const formReady =
+    !hostedForm && Boolean(siteConfig.partnershipFormEndpoint || siteConfig.contactEmail || import.meta.env.DEV);
 
   return (
     <section id="collaborate" className={`section ${styles.section}`} aria-labelledby="collaborate-title">
@@ -41,13 +45,23 @@ export function PartnershipSection() {
             <PartnershipForm />
           ) : (
             <div className={styles.fallback}>
-              <p>The quickest way to reach the people who run Mobile Builders is inside the community itself.</p>
+              <p>
+                {hostedForm
+                  ? "Tell us what you have in mind. The form only takes a couple of minutes."
+                  : "The quickest way to reach the people who run Mobile Builders is inside the community itself."}
+              </p>
               <ul role="list" className={styles.typeList}>
                 {COLLABORATION_TYPES.slice(0, -1).map((t) => (
                   <li key={t}>{t}</li>
                 ))}
               </ul>
-              <JoinLink variant="dark">Get in touch</JoinLink>
+              {hostedForm ? (
+                <ButtonLink href={hostedForm} variant="dark">
+                  Get in touch
+                </ButtonLink>
+              ) : (
+                <JoinLink variant="dark">Get in touch</JoinLink>
+              )}
             </div>
           )}
         </div>

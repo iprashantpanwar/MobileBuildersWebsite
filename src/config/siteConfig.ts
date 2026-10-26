@@ -39,6 +39,8 @@ export type SiteConfig = {
     lumaCalendarIcal: string | null;
   };
   contactEmail: string | null;
+  /** A hosted form for collaboration requests (Google Forms, Tally, …). Takes priority over the built-in form. */
+  collaborationFormUrl: string | null;
   /** Endpoint the collaboration form POSTs JSON to (Formspree, your own API, …). */
   partnershipFormEndpoint: string | null;
 };
@@ -64,5 +66,6 @@ export const siteConfig: SiteConfig = {
     lumaCalendarIcal: "https://api.luma.com/ics/get?entity=calendar&id=cal-Xni6GjDRlOxUDP2",
   },
   contactEmail: null,
+  collaborationFormUrl: "https://forms.gle/xH5QgHVMxXkZjTus8",
   partnershipFormEndpoint: null,
 };

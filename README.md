@@ -78,8 +78,9 @@ Any link or fact that hasn't been confirmed is `null` or empty. Each section han
 - **No upcoming events:** the events section shows a "next session is being planned" state. In `npm run dev` only, a
   striped card marked *Sample data · dev only* appears under it so the card design can be checked. It never ships.
 - **Past sessions without a `recordingUrl`** say "Recording not yet published". Add the URL and the whole card becomes a link.
-- **No `partnershipFormEndpoint` or `contactEmail`:** the production build swaps the collaboration form for a short note
-  that points to the community. Dev still shows the form, so it can be tested.
+- **Collaboration requests:** with `collaborationFormUrl` set (currently the Google Form), "Get in touch" opens that form.
+  Without it, the built-in form shows once `partnershipFormEndpoint` or `contactEmail` is set. With neither, the
+  button points to the community instead.
 - **No `siteUrl`:** no canonical link is written, and the social-card image stays relative. Set it and `vite.config.ts`
   adds both at build time.
 - Footer social links only appear once their URL is set.

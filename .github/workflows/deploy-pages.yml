@@ -1,5 +1,5 @@
 # Builds the site and publishes it to GitHub Pages:
-# https://iprashantpanwar.github.io/MobileBuildersWebsite/
+# https://mobilebuilders.org/
 #
 # Runs on every push to main, and after each Luma sync. Commits made by those syncs
 # use the workflow token, which GitHub doesn't let trigger a push-based run, so the

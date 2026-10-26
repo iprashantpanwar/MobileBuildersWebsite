@@ -7,7 +7,7 @@ export type SiteConfig = {
   description: string;
   /**
    * Where the site is published, without a trailing slash. Enables canonical + absolute social-card
-   * URLs, and its path ("/MobileBuildersWebsite") becomes the base path of the production build.
+   * URLs, and its path (none for a domain of its own) becomes the base path of the production build.
    */
   siteUrl: string | null;
   /** Paths inside public/, without a leading slash, so they work under any base path. */
@@ -50,7 +50,7 @@ export const siteConfig: SiteConfig = {
   tagline: "Better mobile. Built together.",
   description:
     "Join Mobile Builders, an online community for mobile developers exploring Android, iOS, Kotlin Multiplatform, AI-powered development, and the future of mobile.",
-  siteUrl: "https://iprashantpanwar.github.io/MobileBuildersWebsite",
+  siteUrl: "https://mobilebuilders.org",
   logo: {
     original: "logo_backgroundless-preview.png",
     mark: "logo-mark.png",

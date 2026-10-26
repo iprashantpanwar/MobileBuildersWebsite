@@ -21,8 +21,9 @@ function siteUrlMeta(): Plugin {
   };
 }
 
-// GitHub Pages serves the site from a subpath (/MobileBuildersWebsite/), so the production
-// build (and `vite preview` of it) takes its base path from siteUrl. The dev server keeps "/".
+// The production build (and `vite preview` of it) takes its base path from siteUrl: "/" on
+// mobilebuilders.org, or a subpath such as /MobileBuildersWebsite/ on a github.io address.
+// The dev server always serves from "/".
 const basePath = siteConfig.siteUrl ? new URL(siteConfig.siteUrl).pathname.replace(/\/?$/, "/") : "/";
 
 export default defineConfig(({ command, isPreview }) => ({

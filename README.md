@@ -12,11 +12,14 @@ npm run preview   # serve the production build
 
 ## Publishing
 
-The site is published to GitHub Pages at **https://iprashantpanwar.github.io/MobileBuildersWebsite/** by
-`.github/workflows/deploy-pages.yml`. That workflow runs on every push to `main`, after each Luma sync, and on demand
-from the Actions tab. The production build takes its base path (`/MobileBuildersWebsite/`) from `siteUrl` in
-`src/config/siteConfig.ts`. If the site moves to its own domain, change `siteUrl` and the base path follows.
-`npm run preview` serves the build under the same path, at http://localhost:4173/MobileBuildersWebsite/.
+The site is published with GitHub Pages at **https://mobilebuilders.org/** by `.github/workflows/deploy-pages.yml`.
+That workflow runs on every push to `main`, after each Luma sync, and on demand from the Actions tab. The custom
+domain is set in the repository's **Settings → Pages**. DNS is managed at Namecheap: four `A` records for `@` point
+to GitHub Pages (`185.199.108–111.153`), and `www` is a `CNAME` for `iprashantpanwar.github.io`. The old
+`iprashantpanwar.github.io/MobileBuildersWebsite/` address forwards to the domain.
+
+The production build takes its base path from `siteUrl` in `src/config/siteConfig.ts`, which is `/` for
+mobilebuilders.org. `npm run preview` serves the build at http://localhost:4173/.
 
 ## Where things live
 

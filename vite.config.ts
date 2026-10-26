@@ -11,7 +11,8 @@ function siteUrlMeta(): Plugin {
       const origin = siteConfig.siteUrl?.replace(/\/$/, "");
       if (!origin) return html;
       return html
-        .replace('content="/icon-512.png"', `content="${origin}/icon-512.png"`)
+        // Matches before or after Vite has prefixed the base path.
+        .replace(/content="[^"]*\/icon-512\.png"/, `content="${origin}/icon-512.png"`)
         .replace(
           "</head>",
           `    <link rel="canonical" href="${origin}/" />\n    <meta property="og:url" content="${origin}/" />\n  </head>`,
@@ -20,6 +21,11 @@ function siteUrlMeta(): Plugin {
   };
 }
 
-export default defineConfig({
+// GitHub Pages serves the site from a subpath (/MobileBuildersWebsite/), so the production
+// build (and `vite preview` of it) takes its base path from siteUrl. The dev server keeps "/".
+const basePath = siteConfig.siteUrl ? new URL(siteConfig.siteUrl).pathname.replace(/\/?$/, "/") : "/";
+
+export default defineConfig(({ command, isPreview }) => ({
+  base: command === "build" || isPreview ? basePath : "/",
   plugins: [react(), siteUrlMeta()],
-});
+}));

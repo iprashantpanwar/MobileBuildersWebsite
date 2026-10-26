@@ -5,8 +5,12 @@ export type SiteConfig = {
   name: string;
   tagline: string;
   description: string;
-  /** Public origin, e.g. "https://mobilebuilders.dev". Enables canonical + absolute social-card URLs. */
+  /**
+   * Where the site is published, without a trailing slash. Enables canonical + absolute social-card
+   * URLs, and its path ("/MobileBuildersWebsite") becomes the base path of the production build.
+   */
   siteUrl: string | null;
+  /** Paths inside public/, without a leading slash, so they work under any base path. */
   logo: {
     /** The original 500×500 asset, transparent background. */
     original: string;
@@ -44,10 +48,10 @@ export const siteConfig: SiteConfig = {
   tagline: "Better mobile. Built together.",
   description:
     "Join Mobile Builders, an online community for mobile developers exploring Android, iOS, Kotlin Multiplatform, AI-powered development, and the future of mobile.",
-  siteUrl: null,
+  siteUrl: "https://iprashantpanwar.github.io/MobileBuildersWebsite",
   logo: {
-    original: "/logo_backgroundless-preview.png",
-    mark: "/logo-mark.png",
+    original: "logo_backgroundless-preview.png",
+    mark: "logo-mark.png",
     markWidth: 326,
     markHeight: 196,
   },

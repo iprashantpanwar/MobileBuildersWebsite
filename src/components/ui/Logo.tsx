@@ -8,7 +8,7 @@ export function Logo({ size = "md", className }: Props) {
   const { mark, markWidth, markHeight } = siteConfig.logo;
   return (
     <span className={[styles.logo, styles[size], className].filter(Boolean).join(" ")}>
-      <img src={mark} width={markWidth} height={markHeight} alt="" className={styles.mark} />
+      <img src={`${import.meta.env.BASE_URL}${mark}`} width={markWidth} height={markHeight} alt="" className={styles.mark} />
       <span className={styles.wordmark}>
         Mobile<br />Builders
       </span>

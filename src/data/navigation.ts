@@ -6,6 +6,7 @@ export const NAV_LINKS: NavLink[] = [
   { label: "Events", href: "#events" },
   { label: "Resources", href: "#resources" },
   { label: "Community", href: "#community" },
+  { label: "Team", href: "#team" },
 ];
 
 /** What the community talks about. Shown in the snapshot strip and used as event topics. */

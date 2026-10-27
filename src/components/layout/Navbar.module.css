@@ -57,6 +57,7 @@
   font-weight: 600;
   color: var(--c-ink-soft);
   text-decoration: none;
+  white-space: nowrap;
   transition:
     background-color var(--t-fast) ease,
     color var(--t-fast) ease;
@@ -189,7 +190,7 @@
   }
 }
 
-@media (min-width: 960px) {
+@media (min-width: 1080px) {
   .desktopNav {
     display: block;
   }

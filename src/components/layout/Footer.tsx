@@ -20,7 +20,6 @@ export function Footer() {
   const onPage: { label: string; href: string }[] = [
     ...NAV_LINKS,
     { label: "Past sessions", href: "#sessions" },
-    { label: "Team", href: "#team" },
     { label: "Collaborate", href: "#collaborate" },
   ];
 

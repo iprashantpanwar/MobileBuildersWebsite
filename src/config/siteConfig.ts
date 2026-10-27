@@ -59,7 +59,7 @@ export const siteConfig: SiteConfig = {
   },
   links: {
     communityInvite: "https://join.slack.com/t/mobilebuildershub/shared_invite/zt-48904yvtv-eKVPSG3oxudif3N__iqJtw",
-    linkedin: null,
+    linkedin: "https://www.linkedin.com/company/mobilebuilders/",
     youtube: null,
     eventsCalendar: "https://luma.com/mobilebuilders",
     lumaCalendarEmbed: null,

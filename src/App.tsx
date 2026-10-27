@@ -5,6 +5,7 @@ import { CommunitySection } from "./components/sections/CommunitySection";
 import { CommunitySnapshot } from "./components/sections/CommunitySnapshot";
 import { JoinCommunitySection } from "./components/sections/JoinCommunitySection";
 import { PartnershipSection } from "./components/sections/PartnershipSection";
+import { OpportunitiesSection } from "./components/sections/OpportunitiesSection";
 import { PastEventsSection } from "./components/sections/PastEventsSection";
 import { ResourcesSection } from "./components/sections/ResourcesSection";
 import { TeamSection } from "./components/sections/TeamSection";
@@ -27,6 +28,7 @@ export function App() {
         <WhatWeDoSection />
         <UpcomingEventsSection />
         <PastEventsSection />
+        <OpportunitiesSection />
         <CommunitySection />
         <TeamSection />
         <ResourcesSection />

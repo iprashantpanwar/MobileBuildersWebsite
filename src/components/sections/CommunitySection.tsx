@@ -25,7 +25,7 @@ export function CommunitySection() {
         <SectionHeader
           id="community-title"
           tone="dark"
-          index="04"
+          index="05"
           label="Community"
           title={
             <>

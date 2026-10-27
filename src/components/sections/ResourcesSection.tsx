@@ -19,7 +19,7 @@ export function ResourcesSection() {
       <div className="container">
         <SectionHeader
           id="resources-title"
-          index="06"
+          index="07"
           label="Resources"
           title="A library built by the people who use it."
           intro="Recordings, write-ups, open-source work and tools shared by members. It grows one contribution at a time."

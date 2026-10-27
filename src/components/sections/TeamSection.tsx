@@ -12,7 +12,7 @@ export function TeamSection() {
       <div className={`container ${styles.layout}`}>
         <SectionHeader
           id="team-title"
-          index="05"
+          index="06"
           label="Team"
           title="The people behind Mobile Builders."
           intro="Mobile Builders is run by builders, for builders. Say hello, or reach out about a session you'd like to see."

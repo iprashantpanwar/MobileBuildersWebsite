@@ -29,6 +29,7 @@ mobilebuilders.org. `npm run preview` serves the build at http://localhost:4173/
 | Hand-written upcoming and past events | `src/data/events.ts` |
 | Events synced from Luma (past sessions take recording links) | `src/data/luma/*.json` |
 | Resource library | `src/data/resources.ts` |
+| Team members (name, role, LinkedIn, photo) | `src/data/team.ts`, photos in `public/team/` |
 | Nav links and topic list | `src/data/navigation.ts` |
 | Colour, type, spacing, radius, motion tokens | `src/styles/tokens.css` |
 | Page sections | `src/components/sections/`, `src/components/hero/` |

@@ -24,7 +24,7 @@ export function PartnershipSection() {
         <div>
           <SectionHeader
             id="collaborate-title"
-            index="06"
+            index="07"
             label="Collaborate"
             title="Good things happen when builders collaborate."
             intro="Mobile Builders welcomes partnerships, educational initiatives and ideas that make life better for mobile developers. If that's you, let's talk."

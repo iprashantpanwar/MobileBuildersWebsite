@@ -7,6 +7,7 @@ import { JoinCommunitySection } from "./components/sections/JoinCommunitySection
 import { PartnershipSection } from "./components/sections/PartnershipSection";
 import { PastEventsSection } from "./components/sections/PastEventsSection";
 import { ResourcesSection } from "./components/sections/ResourcesSection";
+import { TeamSection } from "./components/sections/TeamSection";
 import { UpcomingEventsSection } from "./components/sections/UpcomingEventsSection";
 import { WhatWeDoSection } from "./components/sections/WhatWeDoSection";
 import { useReveal } from "./hooks/useReveal";
@@ -27,6 +28,7 @@ export function App() {
         <UpcomingEventsSection />
         <PastEventsSection />
         <CommunitySection />
+        <TeamSection />
         <ResourcesSection />
         <PartnershipSection />
         <JoinCommunitySection />

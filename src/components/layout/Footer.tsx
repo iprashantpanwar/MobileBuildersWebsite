@@ -14,6 +14,7 @@ export function Footer() {
     { label: "Events calendar", href: links.eventsCalendar },
     { label: "LinkedIn", href: links.linkedin },
     { label: "YouTube", href: links.youtube },
+    { label: "Instagram", href: links.instagram },
     { label: "Email", href: siteConfig.contactEmail && `mailto:${siteConfig.contactEmail}` },
   ] as FooterLink[]).filter((l): l is { label: string; href: string } => Boolean(l.href));
 

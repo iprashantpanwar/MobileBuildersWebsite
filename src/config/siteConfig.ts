@@ -24,6 +24,7 @@ export type SiteConfig = {
     communityInvite: string | null;
     linkedin: string | null;
     youtube: string | null;
+    instagram: string | null;
     /** A full events page or calendar (Luma, Meetup, …), if one exists. */
     eventsCalendar: string | null;
     /**
@@ -60,7 +61,8 @@ export const siteConfig: SiteConfig = {
   links: {
     communityInvite: "https://join.slack.com/t/mobilebuildershub/shared_invite/zt-48904yvtv-eKVPSG3oxudif3N__iqJtw",
     linkedin: "https://www.linkedin.com/company/mobilebuilders/",
-    youtube: null,
+    youtube: "https://www.youtube.com/@MobileBuilders",
+    instagram: "https://www.instagram.com/mobilebuilders/",
     eventsCalendar: "https://luma.com/mobilebuilders",
     lumaCalendarEmbed: null,
     lumaCalendarIcal: "https://api.luma.com/ics/get?entity=calendar&id=cal-Xni6GjDRlOxUDP2",

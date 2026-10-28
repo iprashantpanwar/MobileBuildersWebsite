@@ -67,7 +67,7 @@ export const siteConfig: SiteConfig = {
     lumaCalendarEmbed: null,
     lumaCalendarIcal: "https://api.luma.com/ics/get?entity=calendar&id=cal-Xni6GjDRlOxUDP2",
   },
-  contactEmail: null,
+  contactEmail: "contact@mobilebuilders.org",
   collaborationFormUrl: "https://forms.gle/xH5QgHVMxXkZjTus8",
   partnershipFormEndpoint: null,
 };

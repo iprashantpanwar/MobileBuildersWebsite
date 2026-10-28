@@ -62,6 +62,11 @@ export function PartnershipSection() {
               ) : (
                 <JoinLink variant="dark">Get in touch</JoinLink>
               )}
+              {siteConfig.contactEmail && (
+                <p className={styles.emailNote}>
+                  Or email us at <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>
+                </p>
+              )}
             </div>
           )}
         </div>

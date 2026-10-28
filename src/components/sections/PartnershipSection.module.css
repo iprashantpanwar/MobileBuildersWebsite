@@ -154,6 +154,15 @@
   gap: var(--s-5);
   justify-items: start;
 }
+.emailNote {
+  color: var(--c-muted);
+  font-size: 0.9375rem;
+}
+.emailNote a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
 .typeList {
   display: flex;
   flex-wrap: wrap;

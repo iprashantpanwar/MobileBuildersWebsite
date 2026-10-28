@@ -1,5 +1,6 @@
 import { siteConfig } from "../../config/siteConfig";
 import { ButtonLink } from "../ui/Button";
+import { EmailLink } from "../ui/EmailLink";
 import { JoinLink } from "../ui/JoinLink";
 import { SectionHeader } from "../ui/SectionHeader";
 import { COLLABORATION_TYPES, PartnershipForm } from "./PartnershipForm";
@@ -64,7 +65,7 @@ export function PartnershipSection() {
               )}
               {siteConfig.contactEmail && (
                 <p className={styles.emailNote}>
-                  Or email us at <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>
+                  Or email us at <EmailLink email={siteConfig.contactEmail} />
                 </p>
               )}
             </div>

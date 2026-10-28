@@ -1,0 +1,17 @@
+.inline,
+.block {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--c-muted);
+  user-select: all;
+  overflow-wrap: anywhere;
+}
+.inline:not(:empty) {
+  margin-left: 0.5em;
+}
+.block {
+  display: block;
+}
+.block:not(:empty) {
+  margin-top: 0.25rem;
+}

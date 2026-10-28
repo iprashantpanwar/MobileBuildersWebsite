@@ -1,6 +1,7 @@
 import { siteConfig } from "../../config/siteConfig";
 import { NAV_LINKS } from "../../data/navigation";
 import { linkProps } from "../../lib/links";
+import { EmailLink } from "../ui/EmailLink";
 import { Logo } from "../ui/Logo";
 import styles from "./Footer.module.css";
 
@@ -15,7 +16,6 @@ export function Footer() {
     { label: "LinkedIn", href: links.linkedin },
     { label: "YouTube", href: links.youtube },
     { label: "Instagram", href: links.instagram },
-    { label: "Email", href: siteConfig.contactEmail && `mailto:${siteConfig.contactEmail}` },
   ] as FooterLink[]).filter((l): l is { label: string; href: string } => Boolean(l.href));
 
   const onPage: { label: string; href: string }[] = [
@@ -57,6 +57,11 @@ export function Footer() {
                     <a {...linkProps(l.href)}>{l.label}</a>
                   </li>
                 ))}
+                {siteConfig.contactEmail && (
+                  <li>
+                    <EmailLink email={siteConfig.contactEmail}>Email</EmailLink>
+                  </li>
+                )}
               </ul>
             </div>
           )}

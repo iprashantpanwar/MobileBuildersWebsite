@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 import react from "@vitejs/plugin-react";
 import { defineConfig, type Plugin } from "vite";
 import { siteConfig } from "./src/config/siteConfig";
@@ -7,15 +8,16 @@ import { siteConfig } from "./src/config/siteConfig";
 function siteUrlMeta(): Plugin {
   return {
     name: "site-url-meta",
-    transformIndexHtml(html) {
+    transformIndexHtml(html, ctx) {
       const origin = siteConfig.siteUrl?.replace(/\/$/, "");
       if (!origin) return html;
+      const page = `${origin}${ctx.path.replace(/index\.html$/, "")}`;
       return html
         // Matches before or after Vite has prefixed the base path.
         .replace(/content="[^"]*\/icon-512\.png"/, `content="${origin}/icon-512.png"`)
         .replace(
           "</head>",
-          `    <link rel="canonical" href="${origin}/" />\n    <meta property="og:url" content="${origin}/" />\n  </head>`,
+          `    <link rel="canonical" href="${page}" />\n    <meta property="og:url" content="${page}" />\n  </head>`,
         );
     },
   };
@@ -29,4 +31,12 @@ const basePath = siteConfig.siteUrl ? new URL(siteConfig.siteUrl).pathname.repla
 export default defineConfig(({ command, isPreview }) => ({
   base: command === "build" || isPreview ? basePath : "/",
   plugins: [react(), siteUrlMeta()],
+  build: {
+    rollupOptions: {
+      input: {
+        main: fileURLToPath(new URL("index.html", import.meta.url)),
+        privacy: fileURLToPath(new URL("privacy/index.html", import.meta.url)),
+      },
+    },
+  },
 }));

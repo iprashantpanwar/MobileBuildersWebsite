@@ -7,7 +7,8 @@ import styles from "./Footer.module.css";
 
 type FooterLink = { label: string; href: string | null };
 
-export function Footer() {
+/** On other pages, `linkBase` points the in-page links back at the home page. */
+export function Footer({ linkBase = "" }: { linkBase?: string }) {
   const { links } = siteConfig;
   // Links nobody has confirmed are simply left out.
   const elsewhere = ([
@@ -28,7 +29,7 @@ export function Footer() {
     <footer className={styles.footer}>
       <div className={`container ${styles.grid}`}>
         <div className={styles.brand}>
-          <a href="#top" className={styles.home} aria-label="Mobile Builders — back to top">
+          <a href={`${linkBase}#top`} className={styles.home} aria-label="Mobile Builders — back to top">
             <Logo size="lg" />
           </a>
           <p className={styles.blurb}>
@@ -43,7 +44,7 @@ export function Footer() {
             <ul role="list" className={styles.list}>
               {onPage.map((l) => (
                 <li key={l.label}>
-                  <a href={l.href}>{l.label}</a>
+                  <a href={`${linkBase}${l.href}`}>{l.label}</a>
                 </li>
               ))}
             </ul>
@@ -69,7 +70,9 @@ export function Footer() {
       </div>
 
       <div className={`container ${styles.base}`}>
-        <p>© {new Date().getFullYear()} Mobile Builders</p>
+        <p>
+          © {new Date().getFullYear()} Mobile Builders · <a href={`${import.meta.env.BASE_URL}privacy/`}>Privacy</a>
+        </p>
         <p className="mono">Built by builders, for builders</p>
       </div>
     </footer>

@@ -1,0 +1,75 @@
+.header {
+  border-bottom: var(--hairline);
+  background: var(--c-bg);
+}
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  min-height: var(--header-h);
+}
+.home {
+  display: inline-flex;
+  padding: 6px;
+  margin: -6px;
+  text-decoration: none;
+}
+.back {
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  text-decoration: none;
+}
+.back:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.main {
+  padding-block: var(--s-8) var(--section-y);
+}
+.eyebrow {
+  color: var(--c-muted);
+}
+.title {
+  margin-top: var(--s-4);
+  font-size: var(--fs-h2);
+  font-weight: 800;
+}
+.lede {
+  margin-top: var(--s-5);
+  max-width: 40rem;
+  font-size: var(--fs-lg);
+  color: var(--c-ink-soft);
+}
+
+.body {
+  margin-top: var(--s-7);
+  max-width: 42rem;
+}
+.block {
+  padding-block: var(--s-6);
+  border-top: var(--hairline);
+}
+.block h2 {
+  font-size: var(--fs-h3);
+}
+.block h3 {
+  margin-top: var(--s-5);
+  font-size: var(--fs-base);
+  letter-spacing: -0.01em;
+}
+.block p,
+.block ul {
+  margin-top: var(--s-3);
+  color: var(--c-ink-soft);
+}
+.block ul {
+  padding-left: 1.2em;
+  display: grid;
+  gap: var(--s-2);
+}
+.block a {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}

@@ -34,6 +34,8 @@ mobilebuilders.org. `npm run preview` serves the build at http://localhost:4173/
 | Nav links and topic list | `src/data/navigation.ts` |
 | Colour, type, spacing, radius, motion tokens | `src/styles/tokens.css` |
 | Page sections | `src/components/sections/`, `src/components/hero/` |
+| Privacy page (`/privacy/`) and its "last updated" date | `src/pages/PrivacyPage.tsx`, `src/data/privacy.ts` |
+| Fonts (bundled, not loaded from Google) | `src/styles/fonts.ts` |
 | Logo (original + transparent-margin-trimmed copy, icons) | `public/` |
 
 ## Events come from Luma
@@ -89,3 +91,9 @@ Any link or fact that hasn't been confirmed is `null` or empty. Each section han
 - **No `siteUrl`:** no canonical link is written, and the social-card image stays relative. Set it and `vite.config.ts`
   adds both at build time.
 - Footer social links only appear once their URL is set.
+
+## Keep the privacy page true
+
+The privacy page says the site sets no cookies, runs no analytics and loads nothing from third parties, and it lists
+every form and service that collects data. Adding a form, an embed (such as the Luma calendar), analytics or an external
+font makes it wrong: update `src/pages/PrivacyPage.tsx` and the date in `src/data/privacy.ts` in the same change.

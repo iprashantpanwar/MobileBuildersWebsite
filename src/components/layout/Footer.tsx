@@ -71,7 +71,7 @@ export function Footer({ linkBase = "" }: { linkBase?: string }) {
 
       <div className={`container ${styles.base}`}>
         <p>
-          © {new Date().getFullYear()} Mobile Builders · <a href={`${import.meta.env.BASE_URL}privacy/`}>Privacy</a>
+          © {new Date().getFullYear()} Mobile Builders · <a href={`${import.meta.env.BASE_URL}privacy/`}>Privacy Policy</a>
         </p>
         <p className="mono">Built by builders, for builders</p>
       </div>

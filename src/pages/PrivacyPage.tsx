@@ -44,7 +44,7 @@ export function PrivacyPage() {
 
       <main id="main" className={`container ${styles.main}`}>
         <p className={`mono ${styles.eyebrow}`}>Last updated {PRIVACY_UPDATED}</p>
-        <h1 className={styles.title}>Privacy</h1>
+        <h1 className={styles.title}>Privacy Policy</h1>
         <p className={styles.lede}>
           Mobile Builders is an online community for mobile developers. This page explains, in plain words, what
           information we collect, why, and what you can ask us to do with it.

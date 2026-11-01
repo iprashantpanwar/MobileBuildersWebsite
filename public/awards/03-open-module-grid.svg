@@ -1,0 +1,15 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Emblem/03 Open Module Grid">
+<g id="Ink">
+<path d="M58 40H30V68H58V40Z" fill="#14231F"/>
+<path d="M94 40H66V68H94V40Z" fill="#14231F"/>
+<path d="M58 76H30V104H58V76Z" fill="#14231F"/>
+<path d="M130 76H102V104H130V76Z" fill="#14231F"/>
+<path d="M58 112H30V140H58V112Z" fill="#14231F"/>
+<path d="M94 112H66V140H94V112Z" fill="#14231F"/>
+<path d="M130 112H102V140H130V112Z" fill="#14231F"/>
+<path d="M94 76V104H66V76H94ZM72 98H88V82H72V98Z" fill="#14231F"/>
+</g>
+<path id="Accent" d="M140 10H112V38H140V10Z" fill="#14231F"/>
+</g>
+</svg>

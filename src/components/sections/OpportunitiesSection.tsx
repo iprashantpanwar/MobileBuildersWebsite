@@ -1,4 +1,5 @@
 import { OPPORTUNITIES, type Opportunity } from "../../data/opportunities";
+import { AwardCategories } from "./AwardCategories";
 import { ButtonLink } from "../ui/Button";
 import { JoinLink } from "../ui/JoinLink";
 import { SectionHeader } from "../ui/SectionHeader";
@@ -32,8 +33,11 @@ export function OpportunitiesSection() {
         {open.length > 0 ? (
           <ul role="list" className={styles.list}>
             {open.map((o) => (
-              <li key={o.id} data-reveal>
-                <OpportunityCard opportunity={o} status={status(o, now)} />
+              <li key={o.id}>
+                <div data-reveal>
+                  <OpportunityCard opportunity={o} status={status(o, now)} />
+                </div>
+                {o.categories && <AwardCategories id={o.id} {...o.categories} />}
               </li>
             ))}
           </ul>

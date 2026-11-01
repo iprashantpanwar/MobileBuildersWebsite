@@ -1,0 +1,9 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Emblem/04 Standalone Tower">
+<g id="Ink">
+<path d="M136 132H24V142H136V132Z" fill="#14231F"/>
+<path d="M60 132V60L98 30V132H60Z" fill="#14231F"/>
+</g>
+<path id="Accent" d="M122 55C128.075 55 133 50.0751 133 44C133 37.9249 128.075 33 122 33C115.925 33 111 37.9249 111 44C111 50.0751 115.925 55 122 55Z" fill="#C7F36B" stroke-width="4" stroke="#14231F"/>
+</g>
+</svg>

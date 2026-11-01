@@ -17,6 +17,18 @@ export type Opportunity = {
   cta: { label: string; url: string };
   /** Text for the round emblem on the card: words around the ring, and a short centre mark. */
   emblem?: { ring: string; center: string };
+  /** Award categories, shown as emblem tiles under the card. */
+  categories?: { heading: string; items: AwardCategory[] };
+};
+
+/** Tile colours from the Builder's Choice Awards identity. */
+export type AwardTile = "forest" | "sage" | "lavender" | "peach" | "charcoal";
+
+export type AwardCategory = {
+  name: string;
+  /** Emblem file in public/awards/. */
+  emblem: string;
+  tile: AwardTile;
 };
 
 export const OPPORTUNITIES: Opportunity[] = [
@@ -34,5 +46,15 @@ export const OPPORTUNITIES: Opportunity[] = [
       url: "https://docs.google.com/forms/d/1cC7PssWWWLIBTHxQ-sCLgWS-BXFpNa_ubS-FMD_nL00/viewform",
     },
     emblem: { ring: "Builders Choice Awards · Mobile Builders · ", center: "’26" },
+    categories: {
+      heading: "Builder’s Choice Awards · 2026",
+      items: [
+        { name: "Mobile Builder of the Year", emblem: "awards/01-structured-summit.svg", tile: "forest" },
+        { name: "Community Champion", emblem: "awards/02-interlocking-rings.svg", tile: "sage" },
+        { name: "Open Source Contributor", emblem: "awards/03-open-module-grid.svg", tile: "lavender" },
+        { name: "Indie Hacker / Solo Founder", emblem: "awards/04-standalone-tower.svg", tile: "peach" },
+        { name: "Rising Star in Mobile", emblem: "awards/05-rising-spark.svg", tile: "charcoal" },
+      ],
+    },
   },
 ];

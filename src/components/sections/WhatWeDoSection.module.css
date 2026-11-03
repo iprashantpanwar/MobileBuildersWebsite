@@ -56,7 +56,7 @@
   fill: var(--c-lime);
 }
 .artWrap :global(.fill-muted) {
-  fill: #4b5a53;
+  fill: var(--c-art-muted);
 }
 .artWrap :global(.lift) {
   transition: transform var(--t-med) var(--ease-out);

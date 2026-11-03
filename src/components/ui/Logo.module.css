@@ -10,6 +10,13 @@
   aspect-ratio: 326 / 196;
 }
 
+:global([data-theme="dark"]) .mark {
+  box-sizing: content-box;
+  padding: 4px 6px;
+  border-radius: 6px;
+  background: #f5f4ed;
+}
+
 .wordmark {
   font-weight: 800;
   font-size: 0.8125rem;

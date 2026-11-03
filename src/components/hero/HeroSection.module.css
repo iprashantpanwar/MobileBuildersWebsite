@@ -73,7 +73,7 @@
   z-index: -1;
   height: 0.3em;
   border-radius: 4px;
-  background: var(--c-lime);
+  background: var(--c-mark);
   transform-origin: left;
   animation: underline 900ms 300ms var(--ease-out) both;
 }

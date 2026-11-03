@@ -1,6 +1,8 @@
 /* Design tokens. Components read these; nothing else should hardcode a colour, radius or space. */
-:root {
-  /* Colour */
+
+/* Colour. Light is the default. `.theme-light` keeps a band in the light palette under either theme. */
+:root,
+.theme-light {
   --c-bg: #f5f4ed;
   --c-surface: #fffef9;
   --c-ink: #14231f;
@@ -13,12 +15,57 @@
   --c-forest-deep: #183429;
   --c-lime: #c7f36b;
   --c-lime-soft: #e6f9bf;
+  --c-lime-hover: #b9ea53;
   --c-lavender: #e3dff7;
   --c-peach: #f7dcca;
   --c-sage: #dfe8d6;
   --c-on-dark: #f5f4ed;
   --c-on-dark-muted: #b9c6bd;
+  --c-surface-alt: #fbfaf2;
+  /* These keep their job in both themes: dark panels, deep forest fills, dark text on lime. */
+  --c-panel: #14231f;
+  --c-forest-fill: #234c3b;
+  --c-on-accent: #14231f;
+  --c-mark: #c7f36b;
+  --c-art-muted: #4b5a53;
 
+  --hairline: 1px solid var(--c-border);
+  --shadow-card: 0 1px 0 rgba(20, 35, 31, 0.04), 0 12px 32px -18px rgba(20, 35, 31, 0.25);
+  --focus-ring: 0 0 0 3px var(--c-bg), 0 0 0 5px var(--c-forest);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --c-bg: #0f1b17;
+  --c-surface: #16251f;
+  --c-surface-alt: #1a2a23;
+  --c-ink: #f1f2e8;
+  --c-ink-soft: #d3dad2;
+  --c-muted: #a1aea5;
+  --c-border: #2a3a33;
+  --c-border-strong: #3e5048;
+  --c-forest: #a3c48d;
+  --c-lime: #a3c48d;
+  --c-lime-hover: #b4d1a0;
+  --c-lime-soft: #2f3a28;
+  --c-lavender: #2c2a4a;
+  --c-peach: #4a3124;
+  --c-sage: #263a2c;
+  --c-panel: #1b2e28;
+  --c-forest-fill: #2b5a46;
+  --c-mark: #35442f;
+  --c-art-muted: #9aa89f;
+  --shadow-card: 0 1px 0 rgba(0, 0, 0, 0.3), 0 12px 32px -18px rgba(0, 0, 0, 0.7);
+}
+
+/* Inside a light band on the dark theme. */
+:root[data-theme="dark"] .theme-light {
+  color-scheme: light;
+  --c-lime: #a3c48d;
+  --c-lime-hover: #b4d1a0;
+}
+
+:root {
   /* Type */
   --font-sans: "Manrope Variable", "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: "DM Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
@@ -54,7 +101,6 @@
   --r-lg: 22px;
   --r-xl: 32px;
   --r-pill: 999px;
-  --hairline: 1px solid var(--c-border);
 
   /* Layout */
   --container: 1200px;
@@ -65,9 +111,6 @@
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --t-fast: 160ms;
   --t-med: 320ms;
-
-  --shadow-card: 0 1px 0 rgba(20, 35, 31, 0.04), 0 12px 32px -18px rgba(20, 35, 31, 0.25);
-  --focus-ring: 0 0 0 3px var(--c-bg), 0 0 0 5px var(--c-forest);
 }
 
 /* Breakpoints (for reference; CSS custom properties can't be used in media queries):

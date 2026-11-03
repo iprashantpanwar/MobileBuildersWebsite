@@ -4,6 +4,7 @@ import { PRIVACY_POLICIES as P, PRIVACY_UPDATED } from "../data/privacy";
 import { Footer } from "../components/layout/Footer";
 import { EmailLink } from "../components/ui/EmailLink";
 import { Logo } from "../components/ui/Logo";
+import { ThemeToggle } from "../components/ui/ThemeToggle";
 import { linkProps } from "../lib/links";
 import styles from "./PrivacyPage.module.css";
 
@@ -36,9 +37,12 @@ export function PrivacyPage() {
           <a href={home} className={styles.home} aria-label="Mobile Builders — home">
             <Logo />
           </a>
-          <a href={home} className={styles.back}>
-            ← Back to the site
-          </a>
+          <div className={styles.actions}>
+            <a href={home} className={styles.back}>
+              ← Back to the site
+            </a>
+            <ThemeToggle />
+          </div>
         </div>
       </header>
 
@@ -69,8 +73,9 @@ export function PrivacyPage() {
 
           <Section id="website" title="Visiting this website">
             <p>
-              The site is a set of static pages. It sets no cookies, stores nothing in your browser and loads no
-              analytics or third-party scripts. Its fonts and images are served from mobilebuilders.org itself.
+              The site is a set of static pages. It sets no cookies and loads no analytics or third-party scripts.
+              The only thing it stores in your browser is your light or dark theme choice, which stays on your device.
+              Its fonts and images are served from mobilebuilders.org itself.
             </p>
             <p>
               The site is hosted on GitHub Pages. Like any web host, GitHub receives your IP address when you load a

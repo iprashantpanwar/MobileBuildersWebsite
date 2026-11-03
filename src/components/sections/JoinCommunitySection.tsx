@@ -6,7 +6,7 @@ export function JoinCommunitySection() {
   const invite = siteConfig.links.communityInvite;
 
   return (
-    <section id="join" className={styles.section} aria-labelledby="join-title">
+    <section id="join" className={`theme-light ${styles.section}`} aria-labelledby="join-title">
       <div className={`container ${styles.inner}`}>
         <div className={styles.copy} data-reveal>
           <p className={`mono ${styles.kicker}`}>Join Mobile Builders</p>

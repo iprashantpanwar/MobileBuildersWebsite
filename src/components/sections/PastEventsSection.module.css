@@ -35,7 +35,7 @@
 .filters button[aria-pressed="true"] {
   background: var(--c-ink);
   border-color: var(--c-ink);
-  color: var(--c-on-dark);
+  color: var(--c-bg);
 }
 .count {
   font-family: var(--font-mono);

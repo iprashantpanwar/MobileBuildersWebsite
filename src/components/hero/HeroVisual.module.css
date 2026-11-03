@@ -55,7 +55,7 @@
   position: absolute;
   padding: 1.6cqw;
   border-radius: 7.5cqw;
-  background: var(--c-ink);
+  background: var(--c-panel);
   box-shadow:
     0 2cqw 6cqw -2cqw rgba(20, 35, 31, 0.35),
     inset 0 0 0 0.35cqw #2d3f39;
@@ -91,7 +91,7 @@
   width: 11cqw;
   height: 3.2cqw;
   border-radius: 2cqw;
-  background: var(--c-ink);
+  background: var(--c-panel);
 }
 .signal {
   width: 5cqw;
@@ -127,7 +127,7 @@
   gap: 1.5cqw;
   padding: 3cqw;
   border-radius: 3.4cqw;
-  background: var(--c-forest);
+  background: var(--c-forest-fill);
 }
 .featureTag {
   justify-self: start;
@@ -136,7 +136,7 @@
   background: var(--c-lime);
   font-family: var(--font-mono);
   font-size: 1.7cqw;
-  color: var(--c-ink);
+  color: var(--c-on-accent);
 }
 .featureBar {
   height: 1.6cqw;
@@ -212,7 +212,7 @@
   background: var(--c-surface);
 }
 .toggleOn {
-  background: var(--c-forest);
+  background: var(--c-forest-fill);
 }
 .toggleOn::after {
   left: auto;
@@ -261,8 +261,8 @@
 }
 
 .code {
-  background: var(--c-ink);
-  border-color: var(--c-ink);
+  background: var(--c-panel);
+  border-color: var(--c-panel);
 }
 .code .cardLabel {
   color: var(--c-on-dark-muted);
@@ -306,7 +306,7 @@
   border-color: transparent;
 }
 .cells i[data-level="4"] {
-  background: var(--c-forest);
+  background: var(--c-forest-fill);
   border-color: transparent;
 }
 
@@ -343,7 +343,8 @@
 }
 .lime {
   background: var(--c-lime);
-  border-color: color-mix(in srgb, var(--c-ink) 18%, var(--c-lime));
+  color: var(--c-on-accent);
+  border-color: color-mix(in srgb, var(--c-on-accent) 18%, var(--c-lime));
 }
 .lavender {
   background: var(--c-lavender);

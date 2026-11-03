@@ -78,7 +78,7 @@ textarea {
 
 ::selection {
   background: var(--c-lime);
-  color: var(--c-ink);
+  color: var(--c-on-accent);
 }
 
 .container {
@@ -116,7 +116,7 @@ textarea {
   padding: 0.75rem 1.25rem;
   border-radius: var(--r-pill);
   background: var(--c-ink);
-  color: var(--c-on-dark);
+  color: var(--c-bg);
   text-decoration: none;
   transform: translateY(-200%);
 }

@@ -22,7 +22,7 @@
   gap: var(--s-6);
   padding: clamp(1.5rem, 1rem + 2.5vw, 3rem);
   border-radius: var(--r-xl);
-  background: var(--c-forest);
+  background: var(--c-forest-fill);
   color: var(--c-on-dark);
 }
 
@@ -56,7 +56,7 @@
   display: grid;
   place-items: center;
   font-weight: 800;
-  color: var(--c-ink);
+  color: var(--c-on-accent);
 }
 
 .emptyLabel {

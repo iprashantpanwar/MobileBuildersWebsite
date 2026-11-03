@@ -4,8 +4,8 @@
 
 .ticker {
   overflow: hidden;
-  border-block: 1px solid var(--c-ink);
-  background: var(--c-ink);
+  border-block: 1px solid var(--c-panel);
+  background: var(--c-panel);
   color: var(--c-on-dark);
   mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
 }

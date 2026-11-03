@@ -3,6 +3,7 @@ import { NAV_LINKS } from "../../data/navigation";
 import { useActiveSection } from "../../hooks/useActiveSection";
 import { JoinLink } from "../ui/JoinLink";
 import { Logo } from "../ui/Logo";
+import { ThemeToggle } from "../ui/ThemeToggle";
 import styles from "./Navbar.module.css";
 
 const SECTION_IDS = NAV_LINKS.map((l) => l.href.slice(1));
@@ -61,6 +62,7 @@ export function Navbar() {
         </nav>
 
         <div className={styles.actions}>
+          <ThemeToggle />
           <span className={styles.cta}>
             <JoinLink size="sm" />
           </span>

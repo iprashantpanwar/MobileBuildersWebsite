@@ -94,6 +94,6 @@ Any link or fact that hasn't been confirmed is `null` or empty. Each section han
 
 ## Keep the privacy page true
 
-The privacy page says the site sets no cookies, runs no analytics and loads nothing from third parties, and it lists
+The privacy page says the site sets no cookies, runs no analytics, loads nothing from third parties and stores only the theme choice in the browser, and it lists
 every form and service that collects data. Adding a form, an embed (such as the Luma calendar), analytics or an external
 font makes it wrong: update `src/pages/PrivacyPage.tsx` and the date in `src/data/privacy.ts` in the same change.

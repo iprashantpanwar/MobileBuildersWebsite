@@ -40,7 +40,7 @@
 
 /* Tile colours from the awards identity (sage, lavender and peach are its own, deeper than the site's). */
 .forest {
-  background: var(--c-forest);
+  background: var(--c-forest-fill);
 }
 .sage {
   background: #cfdcc8;
@@ -52,7 +52,7 @@
   background: #f8c6ad;
 }
 .charcoal {
-  background: var(--c-ink);
+  background: var(--c-panel);
 }
 
 .number {

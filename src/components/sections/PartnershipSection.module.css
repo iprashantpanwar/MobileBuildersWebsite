@@ -118,13 +118,14 @@
   border: 0;
   border-radius: var(--r-pill);
   background: var(--c-ink);
-  color: var(--c-on-dark);
+  color: var(--c-bg);
   font-weight: 700;
   cursor: pointer;
   transition: background-color var(--t-fast) ease;
 }
 .submit:hover {
-  background: var(--c-forest);
+  background: var(--c-forest-fill);
+  color: var(--c-on-dark);
 }
 .submit:disabled {
   opacity: 0.6;

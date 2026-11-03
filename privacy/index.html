@@ -9,11 +9,22 @@
       content="What information Mobile Builders collects through its website, forms and email, why, and how to ask for it to be changed or deleted."
     />
     <meta name="theme-color" content="#f5f4ed" />
-    <meta name="color-scheme" content="light" />
+    <meta name="color-scheme" content="light dark" />
     <link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png" />
     <link rel="apple-touch-icon" href="/icon-180.png" />
     <script>
       document.documentElement.classList.add("js");
+      (function () {
+        var theme;
+        try {
+          theme = localStorage.getItem("theme");
+        } catch (e) {}
+        if (theme !== "light" && theme !== "dark") {
+          theme = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.dataset.theme = theme;
+        document.querySelector('meta[name="theme-color"]').content = theme === "dark" ? "#0f1b17" : "#f5f4ed";
+      })();
     </script>
   </head>
   <body>

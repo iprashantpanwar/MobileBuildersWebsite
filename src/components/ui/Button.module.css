@@ -38,19 +38,20 @@
 
 .primary {
   background: var(--c-lime);
-  color: var(--c-ink);
-  border-color: color-mix(in srgb, var(--c-ink) 14%, var(--c-lime));
+  color: var(--c-on-accent);
+  border-color: color-mix(in srgb, var(--c-on-accent) 14%, var(--c-lime));
 }
 .primary:hover {
-  background: #b9ea53;
+  background: var(--c-lime-hover);
 }
 
 .dark {
   background: var(--c-ink);
-  color: var(--c-on-dark);
+  color: var(--c-bg);
 }
 .dark:hover {
-  background: var(--c-forest);
+  background: var(--c-forest-fill);
+  color: var(--c-on-dark);
 }
 
 .secondary {

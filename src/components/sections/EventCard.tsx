@@ -90,9 +90,6 @@ export function EventCard({ event, variant, tone = "sage", sample = false }: Pro
         {event.title}
       </h3>
       {event.speakers.length > 0 && <p className={styles.speakers}>{event.speakers.join(", ")}</p>}
-      {event.hostedBy && event.hostedBy.length > 0 && (
-        <p className={styles.hosts}>Hosted by {joinNames(event.hostedBy)}</p>
-      )}
       {event.description && <p className={styles.description}>{event.description}</p>}
       <Topics topics={event.topics} />
       <div className={styles.links}>

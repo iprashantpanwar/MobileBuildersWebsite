@@ -138,6 +138,10 @@ export function PrivacyPage() {
                 and email with us as the event host.
               </li>
               <li>YouTube, LinkedIn and Instagram host our recordings and updates.</li>
+              <li>
+                <Ext href={P.substack}>Substack</Ext> hosts our newsletter, Mobile Builders Digest. If you subscribe,
+                Substack holds your email address and shares it with the newsletter's authors.
+              </li>
             </ul>
             <p>
               The upcoming and past events on this site are copied from our public Luma calendar. That copy contains

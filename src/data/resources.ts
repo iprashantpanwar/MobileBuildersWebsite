@@ -57,4 +57,13 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
   },
 ];
 
-export const RESOURCES: Resource[] = [];
+export const RESOURCES: Resource[] = [
+  {
+    id: "mobile-builders-digest",
+    title: "Mobile Builders Digest",
+    category: "announcements",
+    url: "https://mobilebuildersdigest.substack.com/",
+    author: "Selen Demir",
+    description: "A weekly guide for creators, developers and vibe coders building mobile products, on Substack.",
+  },
+];

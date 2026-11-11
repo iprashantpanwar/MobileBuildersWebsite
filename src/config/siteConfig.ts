@@ -25,6 +25,8 @@ export type SiteConfig = {
     linkedin: string | null;
     youtube: string | null;
     instagram: string | null;
+    /** The community newsletter. */
+    substack: string | null;
     /** A full events page or calendar (Luma, Meetup, …), if one exists. */
     eventsCalendar: string | null;
     /**
@@ -63,6 +65,7 @@ export const siteConfig: SiteConfig = {
     linkedin: "https://www.linkedin.com/company/mobilebuilders/",
     youtube: "https://www.youtube.com/@MobileBuilders",
     instagram: "https://www.instagram.com/mobilebuilders/",
+    substack: "https://mobilebuildersdigest.substack.com/",
     eventsCalendar: "https://luma.com/mobilebuilders",
     lumaCalendarEmbed: null,
     lumaCalendarIcal: "https://api.luma.com/ics/get?entity=calendar&id=cal-Xni6GjDRlOxUDP2",

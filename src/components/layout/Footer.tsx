@@ -17,6 +17,7 @@ export function Footer({ linkBase = "" }: { linkBase?: string }) {
     { label: "LinkedIn", href: links.linkedin },
     { label: "YouTube", href: links.youtube },
     { label: "Instagram", href: links.instagram },
+    { label: "Substack", href: links.substack },
   ] as FooterLink[]).filter((l): l is { label: string; href: string } => Boolean(l.href));
 
   const onPage: { label: string; href: string }[] = [

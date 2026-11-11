@@ -1,0 +1,96 @@
+.grid {
+  display: grid;
+  gap: var(--s-4);
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: var(--s-5) var(--s-6) var(--s-6);
+  border: 1px solid color-mix(in srgb, var(--partner-fg) 14%, transparent);
+  border-radius: var(--r-lg);
+  background: var(--partner-bg);
+  color: var(--partner-fg);
+  transition:
+    border-color var(--t-med) ease,
+    transform var(--t-med) var(--ease-out);
+}
+.card:has(a):hover {
+  border-color: var(--partner-fg);
+  transform: translateY(-4px);
+}
+.top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--s-4);
+}
+
+/* Partner icons are shown as supplied, on a white tile where the mark is transparent. */
+.icon {
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  overflow: hidden;
+  border-radius: var(--r-md);
+}
+.mark {
+  padding: 0.6rem;
+  background: #fff;
+}
+.tile {
+  box-shadow: 0 0 0 2px color-mix(in srgb, #fff 70%, transparent);
+}
+.icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.kicker {
+  opacity: 0.8;
+}
+
+.name {
+  margin-top: auto;
+  padding-top: var(--s-6);
+  font-size: clamp(2.25rem, 1.6rem + 2.2vw, 3.25rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.link {
+  justify-self: start;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: var(--s-4);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+/* The website link covers the card, so the whole card is the click target. */
+.link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--r-lg);
+}
+.arrow {
+  transition: translate var(--t-med) var(--ease-out);
+}
+.card:hover .arrow {
+  translate: 2px -2px;
+}
+
+@media (min-width: 720px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .card {
+    min-height: 13rem;
+  }
+}

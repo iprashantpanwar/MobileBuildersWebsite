@@ -4,6 +4,7 @@ import { HeroSection } from "./components/hero/HeroSection";
 import { CommunitySection } from "./components/sections/CommunitySection";
 import { CommunitySnapshot } from "./components/sections/CommunitySnapshot";
 import { JoinCommunitySection } from "./components/sections/JoinCommunitySection";
+import { PartnersSection } from "./components/sections/PartnersSection";
 import { PartnershipSection } from "./components/sections/PartnershipSection";
 import { OpportunitiesSection } from "./components/sections/OpportunitiesSection";
 import { PastEventsSection } from "./components/sections/PastEventsSection";
@@ -32,6 +33,7 @@ export function App() {
         <CommunitySection />
         <TeamSection />
         <ResourcesSection />
+        <PartnersSection />
         <PartnershipSection />
         <JoinCommunitySection />
       </main>

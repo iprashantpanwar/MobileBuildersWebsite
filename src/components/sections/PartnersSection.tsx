@@ -14,7 +14,7 @@ export function PartnersSection() {
       <div className="container">
         <SectionHeader
           id="partners-title"
-          index="08"
+          index="09"
           label="Community partners"
           title="Built with good company."
           intro="The organisations that partner with Mobile Builders to bring more to the community."
@@ -29,7 +29,8 @@ export function PartnersSection() {
               style={
                 {
                   "--reveal-delay": `${i * 90}ms`,
-                  "--partner-bg": partner.color,
+                  "--partner-from": partner.gradient[0],
+                  "--partner-to": partner.gradient[1],
                   "--partner-fg": partner.onColor,
                 } as React.CSSProperties
               }

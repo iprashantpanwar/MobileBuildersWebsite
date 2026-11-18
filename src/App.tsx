@@ -1,6 +1,7 @@
 import { Footer } from "./components/layout/Footer";
 import { Navbar } from "./components/layout/Navbar";
 import { HeroSection } from "./components/hero/HeroSection";
+import { AmbassadorsSection } from "./components/sections/AmbassadorsSection";
 import { CommunitySection } from "./components/sections/CommunitySection";
 import { CommunitySnapshot } from "./components/sections/CommunitySnapshot";
 import { JoinCommunitySection } from "./components/sections/JoinCommunitySection";
@@ -32,6 +33,7 @@ export function App() {
         <OpportunitiesSection />
         <CommunitySection />
         <TeamSection />
+        <AmbassadorsSection />
         <ResourcesSection />
         <PartnersSection />
         <PartnershipSection />

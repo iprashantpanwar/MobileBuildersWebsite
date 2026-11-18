@@ -1,0 +1,149 @@
+.accent {
+  color: var(--c-forest);
+}
+
+/* The program in one line: its term, then what the cohort does together. */
+.program {
+  display: grid;
+  gap: var(--s-4);
+  margin-bottom: var(--s-6);
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--c-ink);
+}
+.badge {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--c-border-strong);
+  border-radius: var(--r-pill);
+  color: var(--c-ink-soft);
+}
+.diamond {
+  width: 9px;
+  height: 9px;
+  border: 1px solid var(--c-on-accent);
+  background: var(--c-lime);
+  transform: rotate(45deg);
+}
+.commitments {
+  display: grid;
+}
+.commitments li {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-4);
+  padding: var(--s-3) 0;
+  border-bottom: var(--hairline);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+.commitments :global(.mono) {
+  color: var(--c-muted);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-4) var(--s-3);
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: var(--hairline);
+  border-radius: var(--r-lg);
+  background: var(--c-surface);
+  transition:
+    border-color var(--t-med) ease,
+    transform var(--t-med) var(--ease-out);
+}
+.card:hover {
+  border-color: var(--c-ink);
+  transform: translateY(-4px);
+}
+
+.photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-bottom: var(--hairline);
+  filter: saturate(0.95);
+  transition: filter var(--t-med) ease;
+}
+.card:hover .photo {
+  filter: none;
+}
+
+.body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--s-1);
+  padding: var(--s-4);
+}
+.number {
+  color: var(--c-forest);
+}
+.name {
+  font-size: 1.0625rem;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+.role {
+  font-size: var(--fs-sm);
+  line-height: 1.45;
+  color: var(--c-muted);
+}
+
+.link {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: auto;
+  padding-top: var(--s-3);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  text-decoration: none;
+}
+.link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--r-lg);
+}
+.arrow {
+  transition: translate var(--t-med) var(--ease-out);
+}
+.card:hover .arrow {
+  translate: 2px -2px;
+}
+
+@media (min-width: 760px) {
+  .program {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: var(--s-6);
+    align-items: start;
+  }
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--s-4);
+  }
+  .body {
+    padding: var(--s-5);
+  }
+  .name {
+    font-size: var(--fs-lg);
+  }
+}
+
+@media (min-width: 1080px) {
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

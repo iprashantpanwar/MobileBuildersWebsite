@@ -1,5 +1,12 @@
-import { SectionHeader } from "../ui/SectionHeader";
-import styles from "./WhatWeDoSection.module.css";
+import styles from "./AboutSection.module.css";
+
+const AUDIENCE = [
+  { label: "Mobile engineers", tone: "sage" },
+  { label: "Indie hackers", tone: "peach" },
+  { label: "Open-source contributors", tone: "lavender" },
+  { label: "Founders", tone: "lime" },
+  { label: "The simply curious", tone: "plain" },
+] as const;
 
 const PILLARS = [
   {
@@ -66,23 +73,41 @@ function PillarArt({ kind }: { kind: (typeof PILLARS)[number]["art"] }) {
   );
 }
 
-export function WhatWeDoSection() {
+/** Who Mobile Builders is for, and the three things it does. */
+export function AboutSection() {
   return (
-    <section id="what-we-do" className="section" aria-labelledby="what-we-do-title">
+    <section id="about" className="section" aria-labelledby="about-title">
       <div className="container">
-        <SectionHeader
-          id="what-we-do-title"
-          index="01"
-          label="What we do"
-          title={
-            <>
-              Less gatekeeping.
-              <br />
-              More building.
-            </>
-          }
-          intro="Mobile Builders is run by and for people who make things. Three ideas hold it together."
-        />
+        <div className={styles.about}>
+          <p className={`mono ${styles.label}`}>
+            <span className={styles.index}>01</span>
+            <span className={styles.rule} aria-hidden="true" />
+            About
+          </p>
+          <div data-reveal>
+            <h2 id="about-title" className={styles.statement}>
+              Mobile Builders is where people who build mobile products come together to{" "}
+              <em>learn, share, and build better.</em>
+            </h2>
+            <p className={styles.sub}>
+              Android or iOS, native or cross-platform, first app or fiftieth — the community is for anyone who ships
+              to a phone and wants to get better at it, alongside others doing the same.
+            </p>
+            <ul role="list" className={styles.audience} aria-label="Who's here">
+              {AUDIENCE.map((a) => (
+                <li key={a.label} className={styles[a.tone]}>
+                  {a.label}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Keeps old #what-we-do links landing here. */}
+        <div id="what-we-do" className={styles.pillarsHead} data-reveal>
+          <h3 className={styles.pillarsTitle}>Less gatekeeping. More building.</h3>
+          <p className={styles.pillarsIntro}>Mobile Builders is run by and for people who make things. Three ideas hold it together.</p>
+        </div>
         <ol role="list" className={styles.grid}>
           {PILLARS.map((p, i) => (
             <li
@@ -96,7 +121,7 @@ export function WhatWeDoSection() {
               </div>
               <div className={styles.text}>
                 <p className={`mono ${styles.n}`}>{p.n}</p>
-                <h3 className={styles.title}>{p.title}</h3>
+                <h4 className={styles.title}>{p.title}</h4>
                 <p className={styles.body}>{p.body}</p>
                 <ul role="list" className={styles.tags}>
                   {p.tags.map((t) => (

@@ -1,3 +1,97 @@
+/* Top: who the community is for. */
+.about {
+  display: grid;
+  gap: var(--s-5);
+}
+
+.label {
+  align-self: start;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--c-muted);
+}
+.index {
+  color: var(--c-ink);
+}
+.rule {
+  width: 2.5rem;
+  height: 1px;
+  background: currentColor;
+}
+
+.statement {
+  font-size: clamp(1.75rem, 1.2rem + 2.4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+}
+.statement em {
+  font-style: normal;
+  color: var(--c-forest);
+  background: linear-gradient(transparent 62%, var(--c-lime-soft) 62%);
+}
+
+.sub {
+  margin-top: var(--s-5);
+  max-width: 38rem;
+  font-size: var(--fs-lg);
+  color: var(--c-muted);
+}
+
+.audience {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  margin-top: var(--s-6);
+}
+.audience li {
+  padding: 0.45rem 0.95rem;
+  border: var(--hairline);
+  border-radius: var(--r-pill);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  background: var(--c-surface);
+}
+.sage {
+  background: var(--c-sage) !important;
+}
+.peach {
+  background: var(--c-peach) !important;
+}
+.lavender {
+  background: var(--c-lavender) !important;
+}
+.lime {
+  background: var(--c-lime-soft) !important;
+}
+
+/* Then what it does: the three pillars. */
+.pillarsHead {
+  display: grid;
+  gap: var(--s-3);
+  margin-top: clamp(3.5rem, 2.5rem + 4vw, 6rem);
+  margin-bottom: var(--s-6);
+}
+.pillarsTitle {
+  font-size: var(--fs-h3);
+  letter-spacing: -0.035em;
+}
+.pillarsIntro {
+  max-width: 36rem;
+  color: var(--c-muted);
+}
+
+@media (min-width: 860px) {
+  .about {
+    grid-template-columns: 12rem minmax(0, 1fr);
+    column-gap: var(--s-7);
+  }
+  .label {
+    padding-top: 0.9rem;
+  }
+}
+
 .grid {
   display: grid;
   gap: var(--s-4);

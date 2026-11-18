@@ -2,8 +2,9 @@ import { Footer } from "./components/layout/Footer";
 import { Navbar } from "./components/layout/Navbar";
 import { HeroSection } from "./components/hero/HeroSection";
 import { AmbassadorsSection } from "./components/sections/AmbassadorsSection";
+import { AboutSection } from "./components/sections/AboutSection";
 import { CommunitySection } from "./components/sections/CommunitySection";
-import { CommunitySnapshot } from "./components/sections/CommunitySnapshot";
+import { TopicsTicker } from "./components/sections/TopicsTicker";
 import { JoinCommunitySection } from "./components/sections/JoinCommunitySection";
 import { PartnersSection } from "./components/sections/PartnersSection";
 import { PartnershipSection } from "./components/sections/PartnershipSection";
@@ -12,7 +13,6 @@ import { PastEventsSection } from "./components/sections/PastEventsSection";
 import { ResourcesSection } from "./components/sections/ResourcesSection";
 import { TeamSection } from "./components/sections/TeamSection";
 import { UpcomingEventsSection } from "./components/sections/UpcomingEventsSection";
-import { WhatWeDoSection } from "./components/sections/WhatWeDoSection";
 import { useReveal } from "./hooks/useReveal";
 
 export function App() {
@@ -26,8 +26,8 @@ export function App() {
       <Navbar />
       <main id="main">
         <HeroSection />
-        <CommunitySnapshot />
-        <WhatWeDoSection />
+        <TopicsTicker />
+        <AboutSection />
         <UpcomingEventsSection />
         <PastEventsSection />
         <OpportunitiesSection />
